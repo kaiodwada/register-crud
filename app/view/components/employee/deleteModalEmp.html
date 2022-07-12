@@ -1,0 +1,43 @@
+<div class="modal fade" id="deleteEmp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="deleteLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header text-light bg-danger">
+                <h5 class="modal-title" id="deleteLabel">Deletar Profissional?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="empDelId" readonly hidden>
+                <div class="mb-3">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome do Profissional:</label>
+                        <input id="nome" class="form-control" type="text" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="idade" class="form-label">Idade:</label>
+                        <input id="idade" class="form-control" type="text" readonly>
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="salario" class="form-label">Salario:</label>
+                        <input id="salario" class="form-control" type="number" readonly>
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="cargo" class="form-label">Cargo:</label>
+                        <input id="cargo" class="form-control" type="text" readonly>
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="genero" class="form-label">Gênero:</label>
+                        <input id="genero" class="form-control" type="text" readonly>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-bs-dismiss="modal" class="btn btn-secondary">Não</button>
+                    <button id="del-emp-modal" type="button" data-bs-dismiss="modal" class="btn btn-danger">Sim, deletar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

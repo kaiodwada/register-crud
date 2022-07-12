@@ -1,0 +1,24 @@
+<div class="modal fade" id="deleteOcc" tabindex="-1" data-bs-backdrop="static" aria-labelledby="deleteOccModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-danger  text-light">
+        <h5 class="modal-title" id="deleteOccModalLabel">Deseja deletar este cargo ?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input id="idOccDel" name="idOccDel" type="number" hidden readonly>
+
+        <div class="mb-3">
+          <label for="cargoOccDel" class="form-label">Nome do cargo:</label>
+          <input id="cargoOccDel" name="cargoOccDel" type="text" class="form-control" readonly>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button id="deleteOccBtn" type="button" class="btn btn-danger" data-bs-dismiss="modal">Sim, deletar</button>
+        <button type="button" class="btn btn-secondary">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>

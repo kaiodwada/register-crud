@@ -1,0 +1,25 @@
+<div class="modal fade" id="deleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="deleteLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteLabel">Agendamento</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body flex-collum">
+        <input type="text" id="delId" value="" readonly hidden>
+        <div>
+          O(A) cliente <span id="nome" class="bg-primary text-light p-2 rounded-2"></span> ja foi consultado(a) ?</div>
+      </div>
+      <div id="erroView">
+
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+        <button id="delete-client-modal" type="button" data-bs-dismiss="modal" class="btn btn-primary">Sim</button>
+
+      </div>
+    </div>
+  </div>
+</div>

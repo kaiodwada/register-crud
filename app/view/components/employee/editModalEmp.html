@@ -1,0 +1,94 @@
+<div class="modal fade" id="editEmpModal"  tabindex="-1" aria-labelledby="editEmpModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editEmpModalLabel">Editar Funcionario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formEditEmp">
+                    <div class="mb-3">
+                        <input id="editId" value="" name="editIdEmp" type="text" readonly hidden>
+                        <label for="editNameEmp">Nome do profissional:</label>
+                        <input id="editNameEmp" name="editNameEmp" type="text" class="form-control border-dark"
+                            autocomplete="off" placeholder="Nome">
+                        <div id="empty-edit-2-funcionario">
+                        </div>
+                    </div>
+
+                    <div class="mb-3 input-group align-items-center">
+
+                        <label for="EditMoneyEmp" class="form-label me-2">Salário:</label>
+                        <div>
+                            <input id="EditMoneyEmp" name="EditMoneyEmp" type="number" style="width: 40%;"
+                                class="form-control border-dark ms-2" autocomplete="off" placeholder="Salario">
+                        </div>
+
+                    </div>
+                    <div id="empty-edit-3-funcionario">
+                    </div>
+                    <div class="mb-3 input-group align-items-center">
+                        <label for="editAgeEmp" class="form-label me-2">Idade:</label>
+                        <div>
+                            <input id="editAgeEmp" name="editAgeEmp" type="number" style="width: 40%;"
+                                class="form-control border-dark ms-2" autocomplete="off">
+                            <div id="empty-edit-4-funcionario">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-2 align-items-center">
+                        <label for="editGenderEmp" class="form-label">Gênero:</label>
+                        <select id="editGenderEmp" name="editGenderEmp" class="form-select border-dark">
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                            <option value="Não binário">Não binário</option>
+                        </select>
+
+                    </div>
+                    <div id="empty-edit-5-funcionario">
+                    </div>
+                    <div class="mb-3">
+                        <label for="cargoFunc">Profissao: </label>
+                        <select id="editOccEmp" name="editOccEmp" class="form-select border-dark">
+                            <option value="" selected>Selecione</option>
+                            {% for cargo in cargos %}
+                            <option value="{{cargo.occupation}}">{{cargo.occupation}}</option>
+                            {% endfor %}
+                        </select>
+                        <div id="empty-edit-6-funcionario">
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="d-flex justify-content-start align-items-center gap-3">
+                            <button class="btn btn-primary" type="submit">Editar
+                            </button>
+                </form>
+                <div class="loader">
+                    <div class=" spinner-grow spinner-grow-sm text-primary" role="status">
+                        <span class="visually-hidden ">Loading...</span>
+                    </div>
+                    <div class=" spinner-grow spinner-grow-sm text-primary" role="status">
+                        <span class="visually-hidden ">Loading...</span>
+                    </div>
+                    <div class=" spinner-grow spinner-grow-sm text-primary" role="status">
+                        <span class="visually-hidden ">Loading...</span>
+                    </div>
+                </div>
+            </div>
+            <div id="complete-edit-Emp">
+
+            </div>
+            <div id="erro-edit-FormCad">
+
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button  type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+    </div>
+</div>
+</div>
+</div>

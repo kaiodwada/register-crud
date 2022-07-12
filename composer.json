@@ -1,0 +1,21 @@
+{
+    "name": "clients/client-register",
+    "description": "Projeto de cadastro de clientes",
+    "authors": [
+        {
+            "name": "Kaio",
+            "email": "kaio@gmail.com"
+        }
+   ],
+    "require": {
+        "twig/twig": "^3.3",
+        "twig/intl-extra": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Lib\\": "lib/"
+        }
+    }
+
+}

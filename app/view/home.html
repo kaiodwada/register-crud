@@ -1,0 +1,62 @@
+{% extends 'template.html' %}
+
+{% block conteudo %}
+<main>
+    <section class="container mt-3 d-flex justify-content-center align-content-center">
+        <div class="card m-2 border-primary" style="width: 18rem;">
+            <div class="card-body ">
+                <h5 class="card-title"> <b id="numeracao" class="text-primary">{{clientes|length}}</b> Clientes
+                    cadastrados</h5>
+            </div>
+        </div>
+        <div class="card m-2 border-dark" style="width: 18rem;">
+            <div class="card-body ">
+                <h5 class="card-title"> <b id="numeracao" class="text-primary">{{funcionarios|length}}</b> Profissionais
+                </h5>
+            </div>
+        </div>
+    </section>
+    <section class="container align-content-center mt-4">
+        <div class="justify-content-center d-flex gap-2">
+            <button class="btn btn-primary border-secondary" id="cadastrarCliente">
+                Cadastrar
+                Clientes
+            </button>
+
+            <button class="btn btn-primary border-dark" id="cadastrarFuncionario">
+                Cadastrar Funcionario
+            </button>
+        </div>
+    </section>
+
+    <section class="container mt-3 justify-content-center">
+        <p class="h2 text-primary p-2">Ultimo cliente marcado</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Idade</th>
+                    <th scope="col">Gênero</th>
+                    <th scope="col">Agendamento</th>
+                    <th scope="col">Profissional</th>
+                </tr>
+            </thead>
+
+            <tbody id="tbody">
+                {% for reg in clientes %}
+                {% if loop.last %}
+                <tr>
+                    <td>{{reg.name}}</td>
+                    <td>{{reg.age}}</td>
+                    <td>{{reg.gender}}</td>
+                    <td>Dia {{reg.scheduling}} as {{reg.time}}hrs</td>
+                    <td>{{reg.professional}}</td>
+                </tr>
+                {% endif %}
+
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</main>
+{% endblock %}

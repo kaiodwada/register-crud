@@ -1,0 +1,106 @@
+
+    <div class="modal fade" id="addEmployeeModal" tabindex="-1" aria-labelledby="addEmployeeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addEmployeeModalLabel">Adicionar novo Funcionario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="formFuncionario">
+                    <div class="modal-body">
+                        <div>
+                            <label for="nomeEmp">Adicione o nome:</label>
+                            <input id="nomeEmp" name="nomeEmp" type="text" class="form-control border-dark"
+                                autocomplete="off" placeholder="Nome do Funcionario">
+
+                            <div id="empty-funcionario-1">
+
+                            </div>
+                        </div>
+
+                        <div class="mb-3 mt-3">
+                            <label for="salEmp">Adicione o salário:</label>
+                            <input id="salEmp" name="salEmp" type="number" class="form-control border-dark"
+                                autocomplete="off" placeholder="Salário">
+
+                            <div id="empty-funcionario-2">
+
+                            </div>
+
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="idadeFunc" class="form-label">Adicione a idade:</label>
+                            <input id="idadeEmp" name="idadeEmp" type="date" class="form-control border-dark"
+                                autocomplete="off">
+
+                            <div id="empty-funcionario-3">
+
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-2">
+                            <div class="d-flex gap-2 mb-3 align-items-center">
+                                <label for="editGenderEmp" class="form-label">Gênero:</label>
+                                <select id="editGenderEmp" name="editGenderEmp" class="form-select border-dark">
+                                    <option value="">Selecione</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Feminino">Feminino</option>
+                                    <option value="Não binário">Não binário</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="empty-funcionario-4">
+
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="cargoFunc">Selecione a profissao: </label>
+                            <select id="cargoFunc" name="cargoFunc" class="form-select border-dark">
+                                <option value="">Selecione</option>
+                                {% for cargo in cargos %}
+                                <option value="{{cargo.occupation}}">{{cargo.occupation}}</option>
+                                {% endfor %}
+                            </select>
+                            <div id="empty-funcionario-5">
+
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="d-flex justify-content-start align-items-center gap-3">
+                                <button class="btn btn-primary" type="submit">Adicionar
+                                </button>
+
+
+                </form>
+                <div class="loader">
+                    <div class=" spinner-grow spinner-grow-sm text-primary" role="status">
+                        <span class="visually-hidden ">Loading...</span>
+                    </div>
+                    <div class=" spinner-grow spinner-grow-sm text-primary" role="status">
+                        <span class="visually-hidden ">Loading...</span>
+                    </div>
+                    <div class=" spinner-grow spinner-grow-sm text-primary" role="status">
+                        <span class="visually-hidden ">Loading...</span>
+                    </div>
+                </div>
+            </div>
+            <div id="complete">
+
+            </div>
+
+            <div id="erroCadastro">
+
+            </div>
+
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+    </div>
+         </div>
+            </div>
+                    </div>

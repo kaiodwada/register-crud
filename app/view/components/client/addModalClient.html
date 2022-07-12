@@ -1,0 +1,93 @@
+<div class="modal  fade" id="addClientModal" tabindex="-1" aria-labelledby="addClientModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Adicionar novo Cliente</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form id="cadastroCliente">
+          <div class="modal-body">
+  
+            <div class="mb-3">
+              <label for="name">Adicione o nome:</label>
+              <input id="name" name="name" type="text" class="form-control border-dark" autocomplete="off"
+                placeholder="Nome do cliente">
+              <div id="empty-cliente-1">
+  
+              </div>
+            </div>
+  
+            <div class="mb-3">
+              <label for="age">Adicione a idade:</label>
+              <input id="age" name="age" type="number" class="form-control border-dark" autocomplete="off"
+                placeholder="Adicione a idade">
+              <div id="empty-cliente-2">
+  
+              </div>
+            </div>
+            <div class="d-flex gap-2  align-items-center col-6">
+              <label for="" class="form-label">Gênero:</label>
+  
+              <select id="gender" name="gender" class="form-select border-dark">
+                <option value="">Selecione</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Não binário">Não binário</option>
+              </select>
+  
+            </div>
+            <div id="empty-cliente-3" class="mb-3">
+  
+            </div>
+            <label for="date" class="form-label">Marque o Agendamento(aberto das 07:30 as 21:00):</label>
+            <div class="input-group">
+              <input id="date" name="date" type="date" class="form-control border-dark" autocomplete="off">
+              <input id="time" name="time" type="time" class="form-control border-dark" step="2" min="07:30" max="21:00">
+            </div>
+            <div id="empty-cliente-4" class="mb-3">
+  
+            </div>
+            <div>
+              <select id="professional" name="professional" class="form-select border-dark">
+                <option value="">Selecione o profissional</option>
+                {% for doutor in funcionarios %}
+                <option value="{{doutor.name}}">{{doutor.name}} - {{doutor.occupation}}</option>
+                {% endfor %}
+              </select>
+              <div id="empty-cliente-6">
+  
+              </div>
+            </div>
+  
+            <div class="col-12">
+              <div class="d-flex justify-content-start align-items-center gap-3">
+                <button id="enviar" class="btn btn-primary mt-3" type="submit">Adicionar
+                </button>
+  
+                <div class="loader">
+                  <div class=" spinner-grow spinner-grow-sm text-primary" role="status">
+                    <span class="visually-hidden ">Loading...</span>
+                  </div>
+                  <div class=" spinner-grow spinner-grow-sm text-primary" role="status">
+                    <span class="visually-hidden ">Loading...</span>
+                  </div>
+                  <div class=" spinner-grow spinner-grow-sm text-primary" role="status">
+                    <span class="visually-hidden ">Loading...</span>
+                  </div>
+                </div>
+              </div>
+              <div id="completeCliente">
+  
+              </div>
+              <div id="erroCard" class="mt-2 text-center">
+              </div>
+  
+  
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>

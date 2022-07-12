@@ -1,0 +1,144 @@
+{% extends 'template.html' %}
+
+{% block title %} <title>Funcionários</title> {% endblock %}
+
+{% block conteudo %}
+<main class="container">
+    <section class=" mt-2 p-2">
+        <h1 class="text-primary">Gestão de Funcionarios</h1>
+    </section>
+    <section class="justify-content-center align-items-center d-flex gap-2">
+        <div>
+            <button id="cadastrar-funcionarios" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#addEmployeeModal">
+                Cadastrar
+                Funcionarios
+            </button>
+            <button id="cadastrar-cargo" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#addOccupationModal">
+                Cadastrar
+                Cargo
+            </button>
+        </div>
+        <div id="msg-delete-complete">
+        </div>
+    </section>
+    <section id="funcionario-add-modal">
+        {% include 'components/employee/addModalEmp.html' %}
+    </section>
+
+    <section id="funcionario-delete-modal">
+        {% include 'components/employee/deleteModalEmp.html' %}
+    </section>
+    <section id="funcionario-edit-modal">
+        {% include 'components/employee/editModalEmp.html' %}
+    </section>
+
+    <section>
+        <div class="accordion p-2 " id="accordionFunc">
+            <div class="accordion-item border-dark">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Todos os Funcionarios
+                    </button>
+                </h2>
+
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionFunc">
+                    <div class="accordion-body">
+                        <table id="Table" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Idade</th>
+                                    <th scope="col">Salário</th>
+                                    <th scope="col">Gênero</th>
+                                    <th scope="col">Cargo</th>
+                                    <th scope="col">Operações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody">
+                                {% for func in funcionarios %}
+                                <tr>
+                                    <td>{{func.name}}</td>
+                                    <td>{{func.age}}</td>
+                                    <td>{{func.salary|format_currency('BRL') }}</td>
+                                    <td>{{func.gender}}</td>
+                                    <td>{{func.occupation}}</td>
+                                    <td class="d-flex gap-1">
+                                        <button onclick="editEmp('{{func.id}}')"
+                                            class="btn btn-outline-primary  edit-btn-emp">Ver/Editar</button>
+                                        <button onclick="viewEmp('{{func.id}}')"
+                                            class="btn btn-outline-danger">Deletar</button>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <section id="occupation-add-modal">
+        {% include 'components/occupation/addOccupationModal.html' %}
+    </section>
+
+    <section class="container">
+        <div class="accordion" id="accordionCargo">
+            <div class="accordion-item  border-dark">
+                <h2 class="accordion-header" id="cargoAcc">
+                    <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseCar" aria-expanded="true" aria-controls="collapseOne">
+                        Exibir os cargos existentes
+                    </button>
+                </h2>
+                <div id="collapseCar" class="accordion-collapse collapse " aria-labelledby="cargoAcc"
+                    data-bs-parent="#accordionCargo">
+                    <div class="accordion-body">
+                        <table id="Table" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Cargo</th>
+                                    <th scope="col">Vagas</th>
+                                    <th scope="col">Operações</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {% for cargo in cargos %}
+                                <tr>
+                                    <td>{{cargo.occupation}}</td>
+                                    {% if cargo.vacancies_filled < 1 %} <td>Numero nao computado</td>
+                                        {% endif %}
+                                        <td>{{cargo.vacancies_filled}}</td>
+                                        <td class="d-flex gap-1">
+                                            <button onclick="viewCrud('{{cargo.id}}')" type="button"
+                                                class="btn btn-outline-primary btn-occ-edit">Ver/Editar</button>
+                                            <button onclick="viewCrudOccupation('{{cargo.id}}')" type="button" class="btn btn-outline-danger btn-occ-del">Deletar</button>
+                                        </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="occupation-edit-modal">
+        {% include 'components/occupation/editOccupationModal.html' %}
+    </section>
+    
+    <section id="occupation-delete-modal">
+        {% include 'components/occupation/delOccupationModal.html' %}
+    </section>
+</main>
+{% endblock %}

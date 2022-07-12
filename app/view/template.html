@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://localhost/register-crud-master/assets/css/style.css">
+    <link rel="stylesheet" href="http://localhost/register-crud-master/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+    {% block title %}<title>Dashboard</title>{% endblock %}
+    {% endblock %}
+</head>
+<body>
+    {% block header %}
+    <header class="bg-primary bg-gradient text-light text-center">
+        <section class="justify-content-cente">
+            <img style="width: 13%; background-attachment: fixed; background-position: center;" class="rounded-3" src="http://localhost/register-crud-master/assets/imgs/logo.png">
+        </section>
+        <section class="p-2 d-flex justify-content-center">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light rounded-pill">
+                <div class="container-fluid">
+                    <a href="http://localhost/register-crud-master/" class="navbar-brand">Home</a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a href="http://localhost/register-crud-master/Client/clientes" class="nav-link active"
+                                aria-current="page">Clientes</a>
+                        </div>
+                        <div class="navbar-nav">
+                            <a href="http://localhost/register-crud-master/Employee/funcionarios" class="nav-link active"
+                                aria-current="page">Funcionários</a>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+        </section>
+    </header>
+    {% endblock %}
+    
+    {% block conteudo %}
+        
+    {% endblock %}
+
+    {% block script %}
+        <script src="http://localhost/register-crud-master/assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="http://localhost/register-crud-master/assets/js/jquery-3.6.0.min.js"></script>
+        <script src="http://localhost/register-crud-master/assets/js/ClientCrud.js"></script>
+        <script src="http://localhost/register-crud-master/assets/js/EmployeeCrud.js"></script> 
+        <script src="http://localhost/register-crud-master/assets/js/OccupationCrud.js"></script>
+        <script src="http://localhost/register-crud-master/assets/js/main.js"></script>
+        <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,71 @@
+
+<div class="modal fade" id="editOccupationModal" tabindex="-1" aria-labelledby="editOccupationModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editOccupationModalLabel">Editar cargos</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editOccupationForm">
+
+                    <div class="mb-3">
+                        <label for="nomeCargo">Nome do cargo</label>
+                        <input id="editNomeCargo" name="nomeCargo" type="text" autocomplete="off"
+                            class="form-control border-dark" placeholder="Nome do cargo">
+                        <div id="empty-edit-occ-1">
+                        </div>
+                    </div>
+
+                    <div class="mb-3 d-flex gap-2 align-items-center">
+                        <label for="vagasCargo" class="form-label">Vagas:</label>
+                        <input id="editVagaCargo" name="vagasCargo" type="number" style="width: 30%;" autocomplete="off"
+                            class="form-control border-dark" placeholder="Digite o nº de vagas">
+                    </div>
+                    <div id="empty-edit-occ-2">
+                        
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="desc">Descrição:</label>
+                        <textarea id="editDescCargo" name="desc" cols="15" rows="5" style="resize: none;"
+                            class="form-control border-dark" placeholder="Descreva o cargo"></textarea>
+                        <div id="empty-edit-occ-3">
+                            
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-2 align-items-center">
+                        <button id="editaOccupation" type="submit" class="btn btn-primary">Editar</button>
+
+                        <div class="loaderOccupation">
+
+                            <div class=" spinner-grow spinner-grow-sm text-primary" role="status">
+                                <span class="visually-hidden ">Loading...</span>
+                            </div>
+                            <div class=" spinner-grow spinner-grow-sm text-primary" role="status">
+                                <span class="visually-hidden ">Loading...</span>
+                            </div>
+                            <div class=" spinner-grow spinner-grow-sm text-primary" role="status">
+                                <span class="visually-hidden ">Loading...</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="sucesso-edit-cargo" class="bg-success  rounded-3 mt-2 text-center">
+                        
+                    </div>
+                    <div id="erroOcc" class="justify-content-center">
+                       
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+
+            </div>
+        </div>
+    </div>
+</div>
